@@ -1,7 +1,7 @@
 let hora = 0
 let minuto = 0
 let segundo = 0
-let centesimo = 0
+let milesimo = 0
 
 let cronometro;
 
@@ -23,19 +23,19 @@ function resetar() {
     let hora = 0
     let minuto = 0
     let segundo = 0
-    let centesimo = 0
+    let milesimo = 0
 
     document.getElementById('hora').innerHTML = "00"
     document.getElementById('minuto').innerHTML = "00"
     document.getElementById('segundo').innerHTML = "00"
-    document.getElementById('centesimo').innerHTML = "00"
+    document.getElementById('milesimo').innerHTML = "000"
 }
 
 function timer() {
-    // centesimo++    
+    // milesimo++    
 
-    if ((centesimo++) == 100) {
-        centesimo = 0
+    if ((milesimo+=10) == 1000) {
+        milesimo = 0
         segundo++
     }
 
@@ -49,15 +49,15 @@ function timer() {
         hora++
     }
 
-    let formatCentesimo = (centesimo < 10 ? '0' + centesimo : centesimo)
+    let formatMilesimo = (milesimo < 100 ? '0' + milesimo : milesimo)
     let formatSegundo = (segundo < 10 ? '0' + segundo : segundo)
     let formatMinuto = (minuto < 10 ? '0' + minuto : minuto)
-    let formatHora = (hora < 10 ? '0' + hora : hora)
+    let formatHora = (hora < 100 ? '0' + hora : hora)
 
     document.getElementById('hora').innerHTML = formatHora
     document.getElementById('minuto').innerHTML = formatMinuto
     document.getElementById('segundo').innerHTML = formatSegundo
-    document.getElementById('centesimo').innerHTML = formatCentesimo
+    document.getElementById('milesimo').innerHTML = formatMilesimo
 
 
 }
