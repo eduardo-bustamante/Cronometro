@@ -24,7 +24,7 @@ function iniciarPausar() {
         let gravacao = document.createElement('div')
         gravacao.classList.add("row", "justify-content-md-center")
         let parciais = document.createElement('div')
-        parciais.classList.add('col-md-auto', 'h6')
+        parciais.classList.add('col-md-auto', 'h6', 'bg-success', 'text-white')
 
         let texto = (hora < 100 ? '0' + hora : hora) + ':' + (minuto < 10 ? '0' + minuto : minuto) + ':' + (segundo < 10 ? '0' + segundo : segundo) + ':' + (milesimo < 100 ? '0' + milesimo : milesimo)
         let gravar = document.createTextNode(texto)
@@ -43,7 +43,7 @@ function parar() {
 }
 
 function resetar() {
-   
+   parar()
     hora = 0
     minuto = 0
     segundo = 0
